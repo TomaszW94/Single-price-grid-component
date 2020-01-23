@@ -1,0 +1,114 @@
+*,*::before,*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+//Primary Colors
+
+$colorCyan: hsl(179, 62%, 43%)
+$colorbrightYellow: hsl(71, 73%, 54%)
+
+//Neutral Colors
+
+$colorlightGray: hsl(204, 43%, 93%)
+$colorgrayishBlue: hsl(218, 22%, 67%)
+
+//Font, font weights
+//- Family: [Karla](https://fonts.google.com/specimen/Karla)
+$fontWeight400: 400
+$fontWeight700: 700    
+    
+body
+    font-size: 16px
+    font-family: 'Karla', sans-serif
+    background-color: $colorlightGray
+section
+    display: flex
+    flex-direction: column
+    margin: 20px 0
+h3
+    margin-bottom: 20px
+p,li
+    font-weight: $fontWeight400
+.card
+    padding: 20px
+    width: 80%
+    margin: 0 auto
+    background-color: #fff
+//CARD-TOP
+.card-top
+    border-radius: 5px 5px 0 0
+.card-top h3
+    color: $colorCyan
+.card-top p:nth-of-type(1)
+    color: $colorbrightYellow
+    margin: 20px 0
+.card-top p:nth-of-type(2)
+    color: $colorgrayishBlue
+//CARD-LEFT
+.card-left
+    background-color: $colorCyan
+    color: #fff
+    .price
+        font-size: 2rem
+        font-weight: $fontWeight700
+        margin-right: 10px
+    .per_month
+        display: inline
+        color: #ececec7a
+    .full_access
+        margin-top: 15px
+    button
+        width: 100%
+        height: 50px
+        margin: 25px auto auto auto
+        border: transparent
+        border-radius: 5px
+        background-color: $colorbrightYellow
+        color: white
+        box-shadow: 0 0 5px #979797
+        font-weight: $fontWeight700
+//CARD-RIGHT
+.card-right
+    background-color: hsl(179, 70%, 43%)
+    border-radius: 0 0 5px 5px
+    color: white
+    ul
+        list-style-type: none
+    li
+        color: $colorlightGray
+.attribution
+    font-size: 11px
+    text-align: center
+.attribution a 
+    color: hsl(228, 45%, 44%)
+@media (min-width:1025px)
+    body
+        display: flex
+        flex-direction: column
+        min-height: 100vh
+        justify-content: center
+        align-items: center
+    h3
+        font-size: 1.4rem
+    section
+        display: grid
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        width: 35%
+        box-shadow: 0 2px 6px #c0c0c0
+    .card
+        width: 100%
+    .card-top
+        grid-column-start: 1
+        grid-column-end: 3
+    .card-right
+        border-radius: 0 0 5px 0
+    .card-left
+        border-radius: 0 0 0 5px
+        button
+            transition: background .5s
+            cursor: pointer
+        button:hover
+            background-color: $colorCyan
+            color: black
